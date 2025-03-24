@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+# My Node.js Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Node.js application built using Express.js that provides user authentication features, including registration and login functionalities. The application connects to a MongoDB database using Mongoose and implements JSON Web Tokens (JWT) for secure authentication.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- User registration with username, email, phone number, and password.
+- User login with email and password.
+- JWT-based authentication for secure access to protected routes.
+- MongoDB database connection using Mongoose.
+- Contact form submission with username, email, and message.
+- Fetch patient Information on dashboard.
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+my-node-app
+├── config
+│   └── db.js                # Database connection configuration
+├── controllers
+│   ├── authController.js    # Authentication logic
+├── middleware
+│   └── auth.js              # JWT verification middleware
+├── models
+│   ├── User.js              # User model definition
+│   ├── Contact.js           # Contact model definition
+│   └── Home.js              # Health updates model definition
+├── routes
+│   ├── auth.js              # Authentication routes
+│   ├── contact.js           # Contact form routes
+│   └── home.js              # Health updates routes
+├── .env                     # Environment variables
+├── package.json             # Project dependencies and scripts
+├── server.js                # Entry point of the application
+└── README.md                # Project documentation
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```sh
+   git clone <repository-url>
+   cd my-node-app
+   ```
 
-### `npm run build`
+2. Install the dependencies:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```sh
+   npm install
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Create a `.env` file in the root directory and add your MongoDB connection string and JWT secret:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```sh
+   MONGO_URI=<your_mongodb_connection_string>
+   JWT_SECRET=<your_jwt_secret>
+   ```
 
-### `npm run eject`
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Start the server:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```sh
+   npm start
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Access the application in your browser at `http://localhost:5000`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## API Endpoints
 
-## Learn More
+- `POST /api/auth/register` - Register a new user.
+- `POST /api/auth/login` - Log in an existing user.
+- `POST /api/contact` - Submit a contact form.
+- `GET /api/home` - Fetch health updates.
+- `GET /api/patient/dashboard` - Fetch patient Info dashboard.
+<!-- 
+## License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License. -->
