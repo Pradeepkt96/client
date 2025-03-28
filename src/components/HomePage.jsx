@@ -32,7 +32,7 @@ function HomePage() {
     <div className="home-container">
       <h1>Welcome, {username}!</h1>
       <p>You have successfully logged in.</p>
-      <p>You will be redirected to the login page in 30 seconds.</p>
+      <p>You will be redirected to the login page.</p>
     </div>
   );
 }
