@@ -62,7 +62,8 @@ my-node-app
 1. Start the server:
 
    ```sh
-   npm start
+   node server (Backend)
+   npm start  (Frontend)
    ```
 
 2. Access the application in your browser at `http://localhost:5000`.
